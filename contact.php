@@ -24,4 +24,13 @@ if(mail ($to, $subject, $body, $headers)) {
 } else {
 	$result='<div class="alert alert-danger">Sorry there was an error sending your message.</div>';
 }
+#Method to go to previous page
+function goback()
+{
+    header("Location: {$_SERVER['HTTP_REFERER']}");
+    exit;
+}
+ 
+goback();
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

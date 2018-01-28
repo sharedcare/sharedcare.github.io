@@ -158,6 +158,6 @@ p.title:hover .list {
     cursor: default;
 }
 #gallery img {
-    width: 240;
-    height: 150;
+    width: 100%;
+    height: 100%;
 }

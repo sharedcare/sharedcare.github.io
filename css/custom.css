@@ -20,12 +20,14 @@
 
 /* Add some shadows to create a card effect */
 .card {
+    border-radius: 2px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: white;
     -webkit-transition: all 300ms ease;
     -moz-transition: all 300ms ease;
     -o-transition: all 300ms ease;
     transition: all 300ms ease;
+    overflow: overlay;
 }
 .card:hover {
     box-shadow: 3px 3px 65px rgba(0,0,0,0.35);

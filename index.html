@@ -26,29 +26,50 @@
 		<!-- Custom styles -->
 		<link href="css/nav.style.css" rel="stylesheet" type="text/css">
 		<link href="css/style.css" rel="stylesheet" type="text/css">
-		<link href="css/onepage-scroll.css" rel="stylesheet" type="text/css">
 		<link href="css/custom.css" rel="stylesheet" type="text/css">
 
 	</head>
 	<body>
-		<div class="wrapper">
-			<div class="main">
+
+		<!-- navbar -->
+		<header class="header">
+	        <div id="nav" role="navigation" class="navbar navbar-default">
+	          <div class="container">
+	            <div class="navbar-header">
+	              <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-btn btn-sm navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand scroll-to" font-famliy="Sofia">Sharedcare</a>
+	            </div>
+	            <div id="navigation" class="collapse navbar-collapse navbar-right">
+	              <ul class="nav navbar-nav navbar-pagination">
+	                <li><a href="#intro">Home</a></li>
+	                <li><a href="#about">About </a></li>
+	                <li><a href="#portfolio">Portfolio</a></li>
+	                <li><a href="#gallery">Gallery</a></li>
+	                <li><a href="#profile">Profile</a></li>
+	                <li><a href="#contact">Contact</a></li>
+	              </ul>
+	            </div>
+	          </div>
+	        </div>
+	    </header>
+	    <!-- /.navbar-->
+
 				<!-- Intro Page -->
-				<section id="intro" class="page1">
+				<section id="intro" class="intro">
 					<div class="overlay"></div>
 					<div class="content">
-					<div class="page_container">
-						<div class="row">
-			                <div class="col-md-8 col-md-offset-2 col-sm-12">
-			                  <p class="italic">Oh, hello, nice to meet you! It's</p>
-			                  <p><h1>Sharedcare</h1><p>
-			                  <p class="italic">This is my homepage</p>
-			                  <p class="italic">Scroll down to see more</p>
-			                </div>
-			            </div>
+						<div class="page_container">
+							<div class="row">
+				                <div class="container mt-5">
+				                  <p><h1>Sharedcare</h1><p>
+				                  <p class="italic">This is my homepage</p>
+				                  <p class="italic">Scroll down to see more</p>
+				                  <a class="btn btn-circle scroll-to" href="#about"><i class="fa fa-angle-down"></i></a></div>
+				                </div>
+				            </div>
+						</div>
+
 					</div>
-					</div>
-					<div><a class="icon" data-index="2"><i class="fa fa-angle-down"></i></a></div>
+					
 				</section>
 
 				
@@ -70,7 +91,7 @@
 				            <p class="lead">Student &amp; Research Assistant at University of Iowa</p>
 				            <p>I'm a junior at University of Iowa, and I am working in Department of Radiation Oncology as research assistant with my mentor Dr. Xia. Mostly, we are doing researches on how programming techniques can be used in medicine. We did a project this year and I'm currently making progress on another project.</p>
 				            <p>I do like programming, and now I'm heading into the field machine learning. We are looking for the possibilities of machine learning in medicine, and particularly, use it for data analysis.</p>
-				            <p>Moreover, I am making a <a href="#" class="naive">iOS</a> APP with my project team. Our app has many features for social interaction. Overall, it is an interesting project.</p>
+				            <p>Moreover, I am making a <a class="naive">iOS</a> APP with my project team. Our app has many features for social interaction. Overall, it is an interesting project.</p>
 				        	</div>
 			          		
 				          <div class="col-md-5 col-md-offset-1">
@@ -319,54 +340,28 @@
 					</div>
 					</div>
 				</div>
-				<footer style="background-color: #111;">
-					<div class="container">
-					<div class="row copyright" >
-          				<div class="col-md-12">
-            				<p>&copy;2017 , <a style="color: #aaa;" href="https://sharedcare.io">sharecare.io</a>. All Rights Reserved</p>
-          				</div>
-          			</div>
-          			</div>
-				</footer>
+				
 				</section>
 
-			</div>
+			
 
-			<footer>
-				
+			<footer style="background-color: #111;">
+				<div class="container">
+					<div class="row copyright" >
+          				<div class="col-md-12">
+            				<p>Copyright &copy; <a style="color: #aaa;" href="https://sharedcare.io">sharecare.io</a> 2018</p>
+          				</div>
+          			</div>
+          		</div>
 			</footer>
 
-
-			<!-- navbar -->
-			<header class="header">
-		        <div id="nav" role="navigation" class="navbar navbar-default">
-		          <div class="container">
-		            <div class="navbar-header">
-		              <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-btn btn-sm navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand scroll-to" font-famliy="Sofia">Sharedcare</a>
-		            </div>
-		            <div id="navigation" class="collapse navbar-collapse navbar-right">
-		              <ul class="nav navbar-nav navbar-pagination">
-		                <li><a data-index="1" href="#intro">Home</a></li>
-		                <li><a data-index="2" href="#about">About </a></li>
-		                <li><a data-index="3" href="#portfolio">Portfolio</a></li>
-		                <li><a data-index="4" href="#gallery">Gallery</a></li>
-		                <li><a data-index="5" href="#text">Profile</a></li>
-		                <li><a data-index="6" href="#contact">Contact</a></li>
-		              </ul>
-		            </div>
-		          </div>
-		        </div>
-		    </header>
-	    	<!-- /.navbar-->
-
-		</div>
+		
 		<!-- Javascript files-->
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     	<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
     	<script>window.jQuery.ui|| document.write('<script src="js/jquery-ui.min.js"><\/script>')</script>	
     	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    	<script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
     	<script type="text/javascript" src="js/jquery.label_better.js"></script>
     	<!-- Sticky + Scroll To scripts for navbar-->
     	<script src="js/jquery.sticky.js"></script>

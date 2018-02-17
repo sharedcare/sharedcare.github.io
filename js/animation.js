@@ -1,6 +1,5 @@
 $(function () {
 
-    onepage();
     label();
     button();
     list();

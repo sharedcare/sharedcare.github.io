@@ -12,6 +12,7 @@ $(function () {
  *  sticky header 
  *  =======================================*/
 
+
 function sticky() {
 
     $(".header").sticky();
@@ -85,6 +86,9 @@ $.fn.alignElementsSameHeight = function () {
         children.innerHeight(maxHeight);
     });
 }
+
+//trigger the scroll
+$(window).scroll();
 
 $(window).load(function () {
 

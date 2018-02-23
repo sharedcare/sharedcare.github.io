@@ -91,7 +91,7 @@ function button() {
         "border-radius": "50%",
         'box-shadow': '0px 0px 15px 5px rgba(0, 0, 0, 0.5)',
         left: e.pageX,
-        top: e.pageY,
+        top: e.screenY-52,
         'margin-left': 0,
         'margin-top': 0,
         'webkit-user-select': 'none',
@@ -115,7 +115,7 @@ function button() {
       });
 
       var Url = $(this).attr('title')
-      setTimeout(function(){window.location.replace(Url)},600);
+      setTimeout(function(){window.location.href = Url;},600);
     }));
     
 }

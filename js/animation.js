@@ -25,7 +25,7 @@ function list() {
                 $('.view').append("<p class='title'>Fall 2017 - Present</p><p>Participants</p><p>Department of Computer Science</p>");
                 break;
             case '4':
-                $('.view').append("<p>Python (Preferred)</p><p>Java</p><p>C#</p><p>Swift</p><p>HTML/CSS/JS</p><p>PHP</p>");
+                $('.view').append("<p>Python</p><p>C</p><p>Java</p><p>C#</p><p>Swift</p><p>HTML/CSS/JS</p><p>PHP</p>");
                 break;
             case '5':
                 $('.view').append("<p>Amazon Web Services</p><p>Tesseract OCR</p><p>TensorFlow</p>");

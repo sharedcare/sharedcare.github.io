@@ -2,6 +2,7 @@ $(document).ready(function(){
     semantic();
     nightMode();
     width();
+    decrypt();
 });
 
 function semantic() {
@@ -82,6 +83,14 @@ function width() {
 
 }
 
+function decrypt() {
+  var href = $('.encrypt').attr('href');
+  var cipher = $('.encrypt').text();
+  plain = atob(cipher);
+  plainHref = atob(href);
+  $('.encrypt').html('<i class="envelope icon"></i> ' + plain);
+  $('.encrypt').attr('href', plainHref);
+}
 
 
   

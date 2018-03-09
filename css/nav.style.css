@@ -245,11 +245,11 @@ NAVBAR
 .header {
   width: 100%;
   background: #fff;
-  z-index: 1003;
+  
 }
 .navbar-collapse {
   position: relative;
-  z-index: 1003;
+  
   background: rgba(255, 255, 255, 0);
 }
 .navbar-collapse a {
@@ -260,7 +260,7 @@ NAVBAR
 
 .navbar-header {
   position: relative;
-  z-index: 1004;
+  
 }
 /* ========================================= */
 /* THEMING OF BOOTSTRAP COMPONENTS           */

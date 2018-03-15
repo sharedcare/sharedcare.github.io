@@ -8,15 +8,32 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
   <body>
-    <div class="ui modal">
-      <div class="header">Header</div>
-      <div class="image content">
-        <img class="image">
-        <div class="description">
-          <p></p>
+    <div class="ui feedback modal">
+      <i class="close icon"></i>
+      <div class="header">
+        Contact
+      </div>
+      <div class="content">
+        <div class="ui form">
+          <h4 class="ui dividing header">Feedback to Sharedcare.io</h4>
+          <div class="field">
+            <label>Feedback</label>
+            <textarea></textarea>
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" checked="checked" name="contact-me" tabindex="0" class="hidden">
+              <label>It's okay to contact me.</label>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="actions">
+        <div class="ui button">Cancel</div>
+        <div class="ui green button">Send</div>
+      </div>
     </div>
+
     <div class="side-content">
       <div class="container">
         <div class="ui special cards">
@@ -346,8 +363,17 @@
           <p class="copyright"><a href="https://sharedcare.io">sharecare.io</a> © 2018</p>
           <div class="ui inverted section divider"></div>
           <div class="ui horizontal inverted small divided link list">
-            <a class="item" href="#">Site Map</a>
-            <a class="item" href="#">Contact</a>
+            <a class="item site">Site Map</a>
+            <div class="ui flowing popup top center transition hidden">
+              <div class="ui big breadcrumb">
+                <div class="section">Sharedcare.io</div>
+                <div class="divider"> / </div>
+                <a class="section" href="//sharedcare.io">Home</a>
+                <i class="right chevron icon divider"></i>
+                <div class="active section">Profile</div>
+              </div>      
+            </div>
+            <a class="item contact">Contact</a>
           </div>
         </div>
       </div>

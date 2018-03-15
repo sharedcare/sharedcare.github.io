@@ -17,6 +17,7 @@ function semantic() {
     action: 'hide'
 
   });
+  
   $('.ui.menu a.item').on('click', function() { 
       $(this).addClass('active').siblings().removeClass('active');
   });
@@ -42,7 +43,22 @@ function semantic() {
   });
 	
   $('.ui.accordion').accordion();
-  $('.ui.modal').modal();
+  
+  // Pop up
+  $('.item.site').popup({
+    inline     : true,
+    hoverable  : true,
+    position   : 'top center',
+    delay: {
+      show: 300,
+      hide: 500
+    }
+  });
+
+  $('.ui.modal').modal({
+      blurring: false
+    })
+    .modal('attach events', '.contact', 'show');
 
 }
 

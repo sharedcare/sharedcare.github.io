@@ -2,6 +2,12 @@ body {
     transition: 0.3s ease-out;
 }
 
+.ui.feedback.modal>.close {
+    top: 1.0535rem;
+    right: 1rem;
+    color: rgba(0,0,0,.87);
+}
+
 .inverted.card {
 	background: #242424 !important;
 }

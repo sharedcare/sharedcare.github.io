@@ -1,0 +1,87 @@
+.large.pointing.menu {
+	border: none !important;
+}
+
+.ui.feedback.modal>.close {
+    top: 1.0535rem;
+    right: 1rem;
+    color: rgba(0,0,0,.87);
+}
+
+.ui.social.segment {
+    margin: auto;
+    padding-bottom: 30px;
+    word-spacing: 10px;
+    text-align: center;
+}
+/* social buttons */
+.ui.github.button {
+	background-color: #333;
+    color: #fff;
+    text-shadow: none;
+}
+
+.ui.github.button:hover {
+    background-color: #2f2f2f;
+}
+
+.ui.github.button:active {
+    background-color: #282828;
+}
+
+.ui.bitbucket.button {
+    background-color: #205081;
+    color: #fff;
+    text-shadow: none;
+}
+.ui.bitbucket.button:hover {
+    background-color: #1c4c7d;
+}
+.ui.bitbucket.button:active {
+    background-color: #154576;
+}
+.ui.quora.button {
+    background-color: #a82400;
+    color: #fff;
+    text-shadow: none;
+}
+.ui.quora.button:hover {
+    background-color: #902507;
+}
+.ui.quora.button:active {
+    background-color: #801d02;
+}
+.ui.stack.overflow.button {
+    background-color: #f48024;
+    color: #fff;
+    text-shadow: none;
+}
+.ui.stack.overflow.button:hover {
+    background-color: #f48024;
+}
+.ui.stack.overflow.button:active {
+    background-color: #f48024;
+}
+
+.ui.footer {
+	padding: 3em 0em;
+}
+
+.copyright {
+	color: #fff;
+	font-size: 16px;
+}
+
+.ui.section.divider {
+    margin: 0;
+}
+
+.copyright>a {
+	color: #aaa;
+}
+
+.copyright>a:hover {
+	color: #eee;
+}
+
+

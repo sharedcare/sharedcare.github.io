@@ -14,6 +14,11 @@
             crossorigin="anonymous"></script>
     <script src="./semantic/dist/semantic.min.js"></script>
     <script src="./js/main.js"></script>
+    <style type="text/css">
+        .ui.search .prompt {
+            border-radius: 0;
+        }
+    </style>
 </head>
 <body>
     <div class="ui feedback modal">
@@ -58,12 +63,15 @@
         <h1 class="ui header">Site Map</h1>
         <p>This is the Site Map of <a href="//sharedcare.io">Sharedcare.io</a></p>
         <p>Go to the link: </p>
-        <div class="ui labeled right icon input">
-            <div class="ui label">
-                https://sharedcare.io/
+        <div class="ui sitemap right aligned category search">
+            <div class="ui labeled right icon input">
+                <div class="ui label">
+                    https://sharedcare.io/
+                </div>
+                <input class="prompt" id="goto" type="text" placeholder="Sub directory" onkeydown="return enterLink(event)">
+                <i class="linkify link icon" onclick="gotoLink()"></i>
             </div>
-            <input id="goto" type="text" placeholder="Sub directory" onkeydown="return enterLink(event)">
-            <i class="linkify link icon" onclick="gotoLink()"></i>
+            <div class="result"></div>
         </div>
 
         <div class="ui list" style="padding: 20px;">
@@ -174,7 +182,7 @@
                 </div>
 
                 <img src="" class="ui centered mini image">
-                <p class="copyright"><a href="https://sharedcare.io">sharecare.io</a> © 2018</p>
+                <p class="copyright"><a href="https://sharedcare.io">sharecare.io</a> © 2018 Yizhen Chen</p>
                 <div class="ui inverted section divider"></div>
                 <div class="ui horizontal inverted small divided link list">
                     <a class="item site" href="//sharedcare.io/sitemap.html">Site Map</a>

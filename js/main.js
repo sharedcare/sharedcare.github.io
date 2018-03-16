@@ -59,35 +59,55 @@ function semantic() {
 
 
   // Search
-  var content = [
-    { title: 'Andorra' },
-    { title: 'United Arab Emirates' },
-    { title: 'Afghanistan' },
-    { title: 'Antigua' },
-    { title: 'Anguilla' },
-    { title: 'Albania' },
-    { title: 'Armenia' },
-    { title: 'Netherlands Antilles' },
-    { title: 'Angola' },
-    { title: 'Argentina' },
-    { title: 'American Samoa' },
-    { title: 'Austria' },
-    { title: 'Australia' },
-    { title: 'Aruba' },
-    { title: 'Aland Islands' },
-    { title: 'Azerbaijan' },
-    { title: 'Bosnia' },
-    { title: 'Barbados' },
-    { title: 'Bangladesh' },
-    { title: 'Belgium' },
-    { title: 'Burkina Faso' },
-    { title: 'Bulgaria' },
-    { title: 'Bahrain' },
-    { title: 'Burundi' }
-    // etc
-  ];
+    var sitemapContent = [
+            {
+                title: 'Home',
+                url: '//sharedcare.io',
+                description: 'Homepage of sharedcare.io',
+            },
+            {
+                title: 'Profile',
+                url: '//sharedcare.io/profile/',
+                description: 'Profile page',
+            },
+            {
+                title: 'Gallery',
+                url: '//sharedcare.io/gallery/',
+                description: 'Gallery page',
+            },
+            {
+                title: 'Log',
+                url: '//sharedcare.io/log/',
+                description: 'Log page',
+            },
+            {
+                title: 'Resume',
+                url: '//sharedcare.io/pdf/Resume.pdf',
+                description: 'My resume pdf file',
+            },
+            {
+                title: 'Sitemap',
+                url: '//sharedcare.io/sitemap.html',
+                description: 'Site Map page for user',
+            },
+            {
+                title: 'Sitemap.xml',
+                url: '//sharedcare.io/sitemap.xml',
+                description: 'XML site map for search bot',
+            }
+        ];
+    $('.ui.sitemap.search')
+        .search({
+            source : sitemapContent,
+            searchFields   : [
+                'title',
+                'url',
+                'description'
+            ],
+            fullTextSearch: false
+        });
 
-  $('.ui.search')
+  $('.menu > .ui.search')
     .search({
       type          : 'category',
       minCharacters : 3,

@@ -132,7 +132,7 @@ function semantic() {
           $.each(githubResponse.items, function(index, item) {
             var
               language   = item.language || 'Unknown',
-              maxResults = 8
+              maxResults = 6
             ;
             if(index >= maxResults) {
               return false;
@@ -153,7 +153,7 @@ function semantic() {
           });
           return response;
         },
-        url: 'https://api.github.com/search/repositories?q={query}'
+        url: 'https://api.github.com/search/repositories?q={query}+user:sharedcare+fork:true\n'
       }
     })
   ;

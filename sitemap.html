@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Sitemap | Sharedcare.io</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./gallery/main.css">
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="./semantic/dist/semantic.min.js"></script>
+    <script src="./js/main.js"></script>
+</head>
+<body>
+    <div class="ui feedback modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Contact
+        </div>
+        <div class="content">
+            <div class="ui form">
+                <h4 class="ui dividing header">Feedback to Sharedcare.io</h4>
+                <div class="field">
+                    <label>Feedback</label>
+                    <textarea></textarea>
+                </div>
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" checked="checked" name="contact-me" tabindex="0" class="hidden">
+                        <label>It's okay to contact me.</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui button">Cancel</div>
+            <div class="ui green button">Send</div>
+        </div>
+    </div>
+
+    <div class="ui fixed inverted menu">
+        <div class="ui container">
+            <a href="//sharedcare.io/sitemap.html" class="header item">
+                <img class="logo">
+                Sitemap
+            </a>
+            <a href="//sharedcare.io" class="item">Home</a>
+            <a href="//sharedcare.io/profile/" class="item">Profile</a>
+            <a href="//sharedcare.io/gallery/" class="item">Gallery</a>
+        </div>
+    </div>
+
+    <div class="ui main text container">
+        <h1 class="ui header">Site Map</h1>
+        <p>This is the Site Map of <a href="//sharedcare.io">Sharedcare.io</a></p>
+        <p>Go to the link: </p>
+        <div class="ui labeled right icon input">
+            <div class="ui label">
+                https://sharedcare.io/
+            </div>
+            <input id="goto" type="text" placeholder="Sub directory" onkeydown="return enterLink(event)">
+            <i class="linkify link icon" onclick="gotoLink()"></i>
+        </div>
+
+        <div class="ui list" style="padding: 20px;">
+            <div class="item">
+                <i class="folder icon"></i>
+                <div class="content">
+                    <a class="header" href="//sharedcare.io">home</a>
+                    <div class="description">Root directory of homepage</div>
+                    <div class="list">
+                        <div class="item">
+                            <i class="folder icon"></i>
+                            <div class="content">
+                                <a class="header" href="//sharedcare.io/profile/">profile</a>
+                                <div class="description">Profile page</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="folder icon"></i>
+                            <div class="content">
+                                <a class="header" href="//sharedcare.io/gallery/">gallery</a>
+                                <div class="description">Gallery page</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="folder icon"></i>
+                            <div class="content">
+                                <div class="header">img</div>
+                                <div class="description">Contains all image files</div>
+                                <div class="list">
+                                    <div class="item">
+                                        <i class="folder icon"></i>
+                                        <div class="content">
+                                            <div class="header">bg</div>
+                                            <div class="description">Contains background images</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="folder icon"></i>
+                            <div class="content">
+                                <div class="header">pdf</div>
+                                <div class="description">Contains all pdf files</div>
+                                <div class="list">
+                                    <div class="item">
+                                        <i class="file pdf icon"></i>
+                                        <div class="content">
+                                            <a class="header" href="//sharedcare.io/pdf/Resume.pdf">Resume.pdf</a>
+                                            <div class="description">My resume pdf file</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="folder icon"></i>
+                            <div class="content">
+                                <a class="header" href="//sharedcare.io/log/">log</a>
+                                <div class="description">Log page</div>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="file code icon"></i>
+                            <div class="content">
+                                <a class="header" href="sitemap.xml">sitemap.xml</a>
+                                <div class="description">XML site map for search engines</div>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="file alternate icon"></i>
+                            <div class="content">
+                                <a class="header" href="README.md">README.md</a>
+                                <div class="description">README file of homepage</div>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="file code icon"></i>
+                            <div class="content">
+                                <div class="header">semantic.json</div>
+                                <div class="description">Contains build settings for gulp</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="ui inverted vertical footer segment">
+            <div class="ui center aligned container">
+                <div class="ui inverted social segment">
+
+                    <button class="ui circular facebook icon button" onclick="window.open('https://www.facebook.com/tony.chen.50702769');">
+                        <i class="facebook icon"></i>
+                    </button>
+                    <button class="ui circular linkedin icon button" onclick="window.open('https://www.linkedin.com/in/sharedcare/');">
+                        <i class="linkedin icon"></i>
+                    </button>
+                    <button class="ui circular github icon button" onclick="window.open('https://github.com/sharedcare');">
+                        <i class="github icon"></i>
+                    </button>
+
+                </div>
+
+                <img src="" class="ui centered mini image">
+                <p class="copyright"><a href="https://sharedcare.io">sharecare.io</a> © 2018</p>
+                <div class="ui inverted section divider"></div>
+                <div class="ui horizontal inverted small divided link list">
+                    <a class="item site" href="//sharedcare.io/sitemap.html">Site Map</a>
+                    <div class="ui flowing popup top center transition hidden">
+                        <div class="ui big breadcrumb">
+                            <div class="section">Sharedcare.io</div>
+                            <div class="divider"> / </div>
+                            <a class="section" href="../">Home</a>
+                            <i class="right chevron icon divider"></i>
+                            <div class="active section">Sitemap</div>
+                        </div>
+                    </div>
+                    <a class="item contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

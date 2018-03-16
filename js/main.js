@@ -152,6 +152,18 @@ function nightMode() {
   });
 }
 
+function enterLink(e) {
+    if (e.keyCode == 13) {
+        gotoLink();
+    }
+}
+
+function gotoLink() {
+    var input = document.getElementById('goto').value;
+    var url = "https://sharedcare.io/" + input;
+    window.open(url);
+}
+
 
 
   

@@ -94,6 +94,16 @@ function semantic() {
                 title: 'Sitemap.xml',
                 url: '//sharedcare.io/sitemap.xml',
                 description: 'XML site map for search bot',
+            },
+            {
+                title: 'Home - Image Captioning',
+                url: '//sharedcare.io/ImageCaptioning/',
+                description: 'A deep learning project',
+            },
+            {
+                title: 'Proposal - Image Captioning',
+                url: '//sharedcare.io/ImageCaptioning/proposal/',
+                description: 'The proposal of Image Captioning',
             }
         ];
     $('.ui.sitemap.search')
@@ -101,10 +111,10 @@ function semantic() {
             source : sitemapContent,
             searchFields   : [
                 'title',
-                'url',
-                'description'
+                'description',
+                'url'
             ],
-            fullTextSearch: false
+            fullTextSearch: true
         });
 
   $('.menu > .ui.search')

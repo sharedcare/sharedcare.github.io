@@ -1,3 +1,7 @@
+// main.js
+// by Chen, Yizhen
+// Main JavaScript functions for sharedcare.io
+// Warn: Using jQuery and Semantic javascript library
 $(document).ready(function(){
     semantic();
     nightMode();
@@ -54,8 +58,7 @@ function semantic() {
 
   $('.ui.modal').modal({
       blurring: false
-    })
-    .modal('attach events', '.contact', 'show');
+  }).modal('attach events', '.contact', 'show');
 
 
   // Search
@@ -157,6 +160,7 @@ function semantic() {
       }
     })
   ;
+
 }
 
 function nightMode() {

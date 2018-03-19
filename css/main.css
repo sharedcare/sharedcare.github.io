@@ -8,6 +8,15 @@
     color: rgba(0,0,0,.87);
 }
 
+.ui.form>.actions {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.ui.form>.actions>.button {
+    margin-bottom: auto !important;
+}
+
 .ui.social.segment {
     margin: auto;
     padding-bottom: 30px;

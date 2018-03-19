@@ -118,6 +118,66 @@
           r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-109218070-1');ga('send','pageview');
   </script>
+  <script>
+
+      var recaptchaVerified = false;
+      $('form').submit(function() {
+          if (recaptchaVerified) {
+              return true;
+          } else {
+
+
+              return false;
+          }
+      });
+
+      var url = "https://aws.sharedcare.io/send-email/"
+
+      var onSubmit = function() {
+          recaptchaVerified = true;
+          $.ajax({
+              type: "POST",
+              url: url,
+              data: $('form').serialize(),
+              statusCode: {
+                  200: function () {
+                      $('.submit.toggle.button').removeClass('loading primary').addClass('green right labeled icon').html('Sent ' +
+                          '<i class="check icon"></i>');
+                  },
+
+                  500: function () {
+                      $('.submit.toggle.button').removeClass('loading primary').addClass('red right labeled icon').html('Failed ' +
+                          '<i class="times icon"></i>');
+                  }
+              }
+          });
+      }
+
+      function submit() {
+        $('.ui.form.error')
+            .form({
+                fields: {
+                    name     : 'empty',
+                    email    : 'email'
+                },
+                inline : true,
+                on     : 'blur'
+            })
+        ;
+        if( $('.ui.form').form('is valid')) {
+            // form is valid (both email and name)
+            send();
+        }
+
+    }
+
+    function send() {
+        $('.submit.toggle.button').addClass('loading');
+        // Send Form
+        grecaptcha.execute();
+    }
+
+  </script>
 
 </head>
 <body class="pushable">
@@ -128,24 +188,49 @@
       Contact
     </div>
     <div class="content">
-      <div class="ui form">
+      <form id="contact-form" class="ui form error">
         <h4 class="ui dividing header">Feedback to Sharedcare.io</h4>
+        <div class="two fields">
+          <div class="field">
+            <label>Name</label>
+            <input placeholder="First Name" name="name" type="text">
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input placeholder="Email address" name="email" type="email">
+          </div>
+        </div>
         <div class="field">
           <label>Feedback</label>
           <textarea></textarea>
         </div>
-        <div class="field">
-          <div class="ui checkbox">
-            <input type="checkbox" checked="checked" name="contact-me" tabindex="0" class="hidden">
-            <label>It's okay to contact me.</label>
+        <div class="two fields">
+          <div class="inline field">
+            <div class="ui checkbox">
+              <input type="checkbox" checked="checked" name="contact-me" tabindex="0">
+              <label>It's okay to contact me.</label>
+            </div>
+          </div>
+          <div class="field">
+
+            <div class="g-recaptcha"
+                 data-sitekey="6LcaIk0UAAAAAI1uKt7VqbqMT3R7VYWvsRQrDM6z"
+                 data-callback="onSubmit"
+                 data-size="invisible">
+            </div>
+
           </div>
         </div>
-      </div>
+        <div class="ui divider"></div>
+        <div class="actions">
+
+          <div class="ui cancel button">Cancel</div>
+          <div class="ui submit toggle primary button" onclick="submit()">Send</div>
+        </div>
+      </form>
+
     </div>
-    <div class="actions">
-      <div class="ui button">Cancel</div>
-      <div class="ui green button">Send</div>
-    </div>
+
   </div>
 
 <!-- Following Menu -->

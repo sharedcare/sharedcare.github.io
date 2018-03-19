@@ -3,7 +3,6 @@
 
 User-Agent: *
 
-Disallow: /log/
 Disallow: /img/
 Disallow: /files/
 Disallow: /homepage.old.old/

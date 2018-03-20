@@ -124,20 +124,28 @@
           $.ajax({
               type: "POST",
               url: url,
-              data: $(form).serialize(),
+              data: $('form').serialize(),
               statusCode: {
                   200: function () {
-                      $('.submit.toggle.button').removeClass('loading primary').addClass('green right labeled icon').html('Sent ' +
+                      $('.toggle.button').removeClass('loading primary').addClass('green right labeled icon').html('Sent ' +
                           '<i class="check icon"></i>');
                   },
-
+                  400: function () {
+                      failOnSubmit();
+                  },
+                  403: function () {
+                      failOnSubmit();
+                  },
                   500: function () {
-                      $('.submit.toggle.button').removeClass('loading primary').addClass('red right labeled icon').html('Failed ' +
-                          '<i class="times icon"></i>');
+                      failOnSubmit();
                   }
               }
           });
+      }
 
+      function failOnSubmit() {
+          $('.toggle.button').removeClass('loading primary').addClass('red right labeled icon').html('Failed ' +
+              '<i class="times icon"></i>');
       }
 
       function validate(event) {
@@ -146,7 +154,8 @@
               .form({
                   fields: {
                       name     : 'empty',
-                      email    : 'email'
+                      email    : 'email',
+                      message  : 'empty'
                   },
                   inline : true,
                   on     : 'blur'
@@ -154,14 +163,14 @@
           ;
           if( $('.ui.form').form('is valid')) {
               // form is valid (both email and name)
-              $('.submit.toggle.button').addClass('loading');
+              $('.toggle.button').addClass('loading');
               grecaptcha.execute();
           }
 
       }
 
       function onload() {
-          var element = document.getElementById('submit');
+          var element = document.getElementById('send');
           element.onclick = validate;
       }
 
@@ -176,7 +185,7 @@
       Contact
     </div>
     <div class="content">
-      <form action="https://aws.sharedcare.io/send-email/" method="post" id="contact-form" class="ui form error">
+      <form id="contact-form" class="ui form error">
         <h4 class="ui dividing header">Feedback to Sharedcare.io</h4>
         <div class="two fields">
           <div class="field">
@@ -190,7 +199,7 @@
         </div>
         <div class="field">
           <label>Feedback</label>
-          <textarea></textarea>
+          <textarea name="message" type="text"></textarea>
         </div>
 
         <div class="inline field">
@@ -209,7 +218,7 @@
         <div class="actions">
           <input type="hidden" name="page" value="homepage">
           <div class="ui cancel button">Cancel</div>
-          <div id="submit" class="ui submit toggle primary button">Send</div>
+          <div id="send" class="ui toggle primary button">Send</div>
         </div>
       </form>
 

@@ -120,18 +120,11 @@
   </script>
   <script>
 
-      $(form).submit(function(event) {
-          // Stop the browser from submitting the form.
-          event.preventDefault();
-
-          // TODO
-      });
-
-      var onSubmit = function() {
-
+      function onSubmit(token) {
+          var url = "https://aws.sharedcare.io/send-email/";
           $.ajax({
               type: "POST",
-              url: $(form).attr('action'),
+              url: url,
               data: $(form).serialize(),
               statusCode: {
                   200: function () {
@@ -145,31 +138,33 @@
                   }
               }
           });
-      };
+          return false;
+      }
 
-      function submit() {
-        $('.ui.form.error')
-            .form({
-                fields: {
-                    name     : 'empty',
-                    email    : 'email'
-                },
-                inline : true,
-                on     : 'blur'
-            })
-        ;
-        if( $('.ui.form').form('is valid')) {
-            // form is valid (both email and name)
-            send();
-        }
+      function validate(event) {
+          event.preventDefault();
+          $('.ui.form.error')
+              .form({
+                  fields: {
+                      name     : 'empty',
+                      email    : 'email'
+                  },
+                  inline : true,
+                  on     : 'blur'
+              })
+          ;
+          if( $('.ui.form').form('is valid')) {
+              // form is valid (both email and name)
+              $('.submit.toggle.button').addClass('loading');
+              grecaptcha.execute();
+          }
 
-    }
+      }
 
-    function send() {
-        $('.submit.toggle.button').addClass('loading');
-        // Send Form
-        grecaptcha.execute();
-    }
+      function onload() {
+          var element = document.getElementById('submit');
+          element.onclick = validate;
+      }
 
   </script>
 
@@ -182,7 +177,7 @@
       Contact
     </div>
     <div class="content">
-      <form action="https://aws.sharedcare.io/send-email/" method="post" id="contact-form" class="ui form error">
+      <form id="contact-form" class="ui form error">
         <h4 class="ui dividing header">Feedback to Sharedcare.io</h4>
         <div class="two fields">
           <div class="field">
@@ -215,7 +210,7 @@
         <div class="actions">
 
           <div class="ui cancel button">Cancel</div>
-          <div class="ui submit toggle primary button" onclick="submit()">Send</div>
+          <div id="submit" class="ui submit toggle primary button">Send</div>
         </div>
       </form>
 
@@ -381,6 +376,6 @@
 </footer>
 
 
-
+<script>onload();</script>
 
 </body></html>

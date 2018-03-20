@@ -119,7 +119,6 @@
       ga('create','UA-109218070-1');ga('send','pageview');
   </script>
   <script>
-
       function onSubmit(token) {
           var url = "https://aws.sharedcare.io/send-email/";
           $.ajax({
@@ -138,7 +137,7 @@
                   }
               }
           });
-          return false;
+          
       }
 
       function validate(event) {
@@ -167,6 +166,7 @@
       }
 
   </script>
+  <script>onload();</script>
 
 </head>
 <body class="pushable">
@@ -208,7 +208,7 @@
         </div>
         <div class="ui divider"></div>
         <div class="actions">
-
+          <input type="hidden" name="page" value="homepage">
           <div class="ui cancel button">Cancel</div>
           <div id="submit" class="ui submit toggle primary button">Send</div>
         </div>

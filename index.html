@@ -120,25 +120,19 @@
   </script>
   <script>
 
-      var recaptchaVerified = false;
-      $('form').submit(function() {
-          if (recaptchaVerified) {
-              return true;
-          } else {
+      $(form).submit(function(event) {
+          // Stop the browser from submitting the form.
+          event.preventDefault();
 
-
-              return false;
-          }
+          // TODO
       });
 
-      var url = "https://aws.sharedcare.io/send-email/"
-
       var onSubmit = function() {
-          recaptchaVerified = true;
+
           $.ajax({
               type: "POST",
-              url: url,
-              data: $('form').serialize(),
+              url: $(form).attr('action'),
+              data: $(form).serialize(),
               statusCode: {
                   200: function () {
                       $('.submit.toggle.button').removeClass('loading primary').addClass('green right labeled icon').html('Sent ' +
@@ -151,7 +145,7 @@
                   }
               }
           });
-      }
+      };
 
       function submit() {
         $('.ui.form.error')
@@ -188,7 +182,7 @@
       Contact
     </div>
     <div class="content">
-      <form id="contact-form" class="ui form error">
+      <form action="https://aws.sharedcare.io/send-email/" method="post" id="contact-form" class="ui form error">
         <h4 class="ui dividing header">Feedback to Sharedcare.io</h4>
         <div class="two fields">
           <div class="field">
@@ -204,22 +198,18 @@
           <label>Feedback</label>
           <textarea></textarea>
         </div>
-        <div class="two fields">
-          <div class="inline field">
-            <div class="ui checkbox">
-              <input type="checkbox" checked="checked" name="contact-me" tabindex="0">
-              <label>It's okay to contact me.</label>
-            </div>
-          </div>
-          <div class="field">
 
-            <div class="g-recaptcha"
-                 data-sitekey="6LcaIk0UAAAAAI1uKt7VqbqMT3R7VYWvsRQrDM6z"
-                 data-callback="onSubmit"
-                 data-size="invisible">
-            </div>
-
+        <div class="inline field">
+          <div class="ui checkbox">
+            <input type="checkbox" checked="checked" name="contact-me" tabindex="0">
+            <label>It's okay to contact me.</label>
           </div>
+        </div>
+
+        <div class="g-recaptcha"
+             data-sitekey="6LcaIk0UAAAAAI1uKt7VqbqMT3R7VYWvsRQrDM6z"
+             data-callback="onSubmit"
+             data-size="invisible">
         </div>
         <div class="ui divider"></div>
         <div class="actions">

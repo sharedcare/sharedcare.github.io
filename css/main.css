@@ -9,12 +9,13 @@
 }
 
 .ui.form>.actions {
-    text-align: right;
-    padding-right: 10px;
+    text-align: left;
 }
 
 .ui.form>.actions>.button {
     margin-bottom: auto !important;
+    margin-left: .25em;
+    margin-right: .75em;
 }
 
 .ui.social.segment {

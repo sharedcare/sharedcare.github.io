@@ -122,7 +122,8 @@
       function onSubmit(token) {
           var url = "https://aws.sharedcare.io/send-email/";
           $.ajax({
-              type: "POST",
+              crossDomain: true,
+              method: "POST",
               url: url,
               data: $('form').serialize(),
               statusCode: {
@@ -139,6 +140,9 @@
                   500: function () {
                       failOnSubmit();
                   }
+              },
+              error: function () {
+                  failOnSubmit();
               }
           });
       }
@@ -167,6 +171,15 @@
               grecaptcha.execute();
           }
 
+      }
+
+      function resend() {
+          $('.loading.toggle.button').removeClass('loading').addClass('right labeled icon').html('Resend ' +
+              '<i class="refresh icon"></i>');
+          $('.red.toggle.button').removeClass('red').addClass('primary').html('Resend ' +
+              '<i class="refresh icon"></i>');
+          $('.green.toggle.button').removeClass('green').addClass('primary').html('Resend ' +
+              '<i class="refresh icon"></i>');
       }
 
       function onload() {

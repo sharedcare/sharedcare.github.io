@@ -128,7 +128,7 @@
               data: $('form').serialize(),
               statusCode: {
                   200: function () {
-                      $('.toggle.button').removeClass('loading primary').addClass('green right labeled icon').html('Sent ' +
+                      $('.toggle.button').removeClass('red loading primary').addClass('green right labeled icon').html('Sent ' +
                           '<i class="check icon"></i>');
                   },
                   400: function () {
@@ -148,7 +148,7 @@
       }
 
       function failOnSubmit() {
-          $('.toggle.button').removeClass('loading primary').addClass('red right labeled icon').html('Failed ' +
+          $('.toggle.button').removeClass('green loading primary').addClass('red right labeled icon').html('Failed ' +
               '<i class="times icon"></i>');
       }
 

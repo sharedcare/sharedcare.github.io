@@ -4,7 +4,6 @@
 // Warn: Using jQuery and Semantic javascript library
 $(document).ready(function(){
     semantic();
-    nightMode();
 });
 
 function semantic() {
@@ -163,29 +162,6 @@ function semantic() {
 
 }
 
-function nightMode() {
-  $('.night.ui.circular.button').on('click', function() {
-      if ($(this).hasClass('inverted')) {
-        $(this).removeClass('inverted');
-        $('.card').removeClass('inverted');
-        $('.ui.secondary.pointing.menu').removeClass('inverted');
-        $('.ui.raised.segments').children().removeClass('inverted');
-        $('.ui.ribbon.label').addClass('black');
-        $('.extra > .ui.label').removeClass('grey');
-        $('body').removeClass('night');
-      } else {
-        $(this).addClass('inverted');
-        $('.card').addClass('inverted');
-        $('.ui.secondary.pointing.menu').addClass('inverted');
-        $('.ui.raised.segments').children().addClass('inverted');
-        $('.ui.black.ribbon.label').removeClass('black');
-        $('.extra > .ui.label').addClass('grey');
-        $('body').addClass('night');
-      }
-      
-  });
-}
-
 function enterLink(e) {
     if (e.keyCode == 13) {
         gotoLink();
@@ -198,6 +174,73 @@ function gotoLink() {
     window.open(url);
 }
 
+function onSubmit(token) {
+    var url = "https://aws.sharedcare.io/send-email/";
+    $.ajax({
+        crossDomain: true,
+        method: "POST",
+        url: url,
+        data: $('form').serialize(),
+        statusCode: {
+            200: function () {
+                $('.toggle.button').removeClass('red loading primary').addClass('green right labeled icon').html('Sent ' +
+                    '<i class="check icon"></i>');
+            },
+            400: function () {
+                failOnSubmit();
+            },
+            403: function () {
+                failOnSubmit();
+            },
+            500: function () {
+                failOnSubmit();
+            }
+        },
+        error: function () {
+            failOnSubmit();
+        }
+    });
+}
+
+function failOnSubmit() {
+    $('.toggle.button').removeClass('green loading primary').addClass('red right labeled icon').html('Failed ' +
+        '<i class="times icon"></i>');
+}
+
+function validate(event) {
+    event.preventDefault();
+    $('.ui.form.error')
+        .form({
+            fields: {
+                name     : 'empty',
+                email    : 'email',
+                message  : 'empty'
+            },
+            inline : true,
+            on     : 'blur'
+        })
+    ;
+    if( $('.ui.form').form('is valid')) {
+        // form is valid (both email and name)
+        $('.toggle.button').addClass('loading');
+        grecaptcha.execute();
+    }
+
+}
+
+function resend() {
+    $('.loading.toggle.button').removeClass('loading').addClass('right labeled icon').html('Resend ' +
+        '<i class="refresh icon"></i>');
+    $('.red.toggle.button').removeClass('red').addClass('primary').html('Resend ' +
+        '<i class="refresh icon"></i>');
+    $('.green.toggle.button').removeClass('green').addClass('primary').html('Resend ' +
+        '<i class="refresh icon"></i>');
+}
+
+function onload() {
+    var element = document.getElementById('send');
+    element.onclick = validate;
+}
 
 
   

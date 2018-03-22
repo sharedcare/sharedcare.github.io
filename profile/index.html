@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="../semantic/dist/semantic.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="../js/contact.js"></script>
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
   </head>
   <body>
     <div class="ui feedback modal">
@@ -14,24 +24,45 @@
         Contact
       </div>
       <div class="content">
-        <div class="ui form">
+        <form id="contact-form" class="ui form error">
           <h4 class="ui dividing header">Feedback to Sharedcare.io</h4>
-          <div class="field">
-            <label>Feedback</label>
-            <textarea></textarea>
+          <div class="two fields">
+            <div class="field">
+              <label>Name</label>
+              <input placeholder="First Name" name="name" type="text">
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input placeholder="Email address" name="email" type="email">
+            </div>
           </div>
           <div class="field">
+            <label>Feedback</label>
+            <textarea name="message" type="text"></textarea>
+          </div>
+
+          <div class="inline field">
             <div class="ui checkbox">
-              <input type="checkbox" checked="checked" name="contact-me" tabindex="0" class="hidden">
+              <input type="checkbox" checked="checked" name="contact-me" tabindex="0">
               <label>It's okay to contact me.</label>
             </div>
           </div>
-        </div>
+
+          <div class="g-recaptcha"
+               data-sitekey="6LcaIk0UAAAAAI1uKt7VqbqMT3R7VYWvsRQrDM6z"
+               data-callback="onSubmit"
+               data-size="invisible">
+          </div>
+          <div class="ui divider"></div>
+          <div class="actions">
+            <input type="hidden" name="page" value="homepage">
+            <div class="ui cancel button">Cancel</div>
+            <div id="send" class="ui toggle primary button">Send</div>
+          </div>
+        </form>
+
       </div>
-      <div class="actions">
-        <div class="ui button">Cancel</div>
-        <div class="ui green button">Send</div>
-      </div>
+
     </div>
 
     <div class="side-content">
@@ -86,9 +117,9 @@
                     <i class="dropdown icon"></i>
                   </div>
                   <div class="content">
-                    <p class="transition hidden"><i class="icon"></i> English</p>
-                    <p class="transition hidden"><i class="icon"></i> Chinese</p>
-                    <p class="transition hidden"><i class="icon"></i> Japanese</p>
+                    <p class="transition hidden"><a href="//sharedcare.io/profile/"><i class="icon"></i> English</a></p>
+                    <p class="transition hidden"><a href="//sharedcare.io/profile/cn/"><i class="icon"></i> Chinese</a></p>
+                    <p class="transition hidden"><a href="//sharedcare.io/profile/jp/"><i class="icon"></i> Japanese</a></p>
                   </div>
                 
               </div>
@@ -407,11 +438,6 @@
         </div>
       </div>
     </footer>
-    <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
-    <script src="../semantic/dist/semantic.min.js"></script>
-    <script src="js/main.js"></script>
+
   </body>
 </html>

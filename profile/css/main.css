@@ -27,6 +27,11 @@ body {
 	color: rgba(255,255,255,0.4) !important;
 }
 
+.inverted>.extra.content>.content>p>a {
+	color: rgba(255,255,255,0.4) !important;
+}
+
+
 .inverted>.items>.item>.content>.header {
 	color: white !important;
 }

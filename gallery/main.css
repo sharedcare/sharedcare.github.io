@@ -5,3 +5,15 @@
 .ui.main.text.container {
     margin: 100px;
 }
+
+@media (max-width: 550px) {
+    .ui.four.cards>.card {
+        width: 100%;
+    }
+}
+
+@media (min-width: 551px) and (max-width: 800px) {
+    .ui.four.cards>.card {
+        width: 45%;
+    }
+}

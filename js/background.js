@@ -7,6 +7,6 @@ function randomInt(min, max) {
 }
 
 function background() {
-    var bg = 'bg' + randomInt(1, 14);
+    var bg = 'bg' + randomInt(1, 20);
     $('.masthead').addClass(bg).removeClass('zoomed');
 }

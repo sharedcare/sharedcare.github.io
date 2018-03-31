@@ -73,6 +73,24 @@
 .masthead.bg14:after {
   background-image: url("../img/bg/14.jpg");
 }
+.masthead.bg15:after {
+  background-image: url("../img/bg/15.jpg");
+}
+.masthead.bg16:after {
+  background-image: url("../img/bg/16.jpg");
+}
+.masthead.bg17:after {
+  background-image: url("../img/bg/bg1.jpeg");
+}
+.masthead.bg18:after {
+  background-image: url("../img/bg/bg2.jpeg");
+}
+.masthead.bg19:after {
+  background-image: url("../img/bg/bg3.jpeg");
+}
+.masthead.bg20:after {
+  background-image: url("../img/bg/bg4.jpeg");
+}
 
 .masthead,
 .masthead:after {

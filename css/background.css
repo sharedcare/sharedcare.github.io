@@ -35,61 +35,22 @@
   background-image: url("../img/bg/1.jpg");
 }
 .masthead.bg2:after {
-  background-image: url("../img/bg/2.jpg");
+  background-image: url("../img/bg/bg1.jpg");
 }
 .masthead.bg3:after {
-  background-image: url("../img/bg/3.jpg");
+  background-image: url("../img/bg/bg2.jpg");
 }
 .masthead.bg4:after {
-  background-image: url("../img/bg/4.jpg");
+  background-image: url("../img/bg/bg3.jpg");
 }
 .masthead.bg5:after {
-  background-image: url("../img/bg/5.jpg");
+  background-image: url("../img/bg/bg4.jpg");
 }
 .masthead.bg6:after {
-  background-image: url("../img/bg/6.jpg");
+  background-image: url("../img/bg/bg5.jpg");
 }
 .masthead.bg7:after {
-  background-image: url("../img/bg/7.jpg");
-}
-.masthead.bg8:after {
-  background-image: url("../img/bg/8.jpg");
-}
-.masthead.bg9:after {
-  background-image: url("../img/bg/9.jpg");
-}
-.masthead.bg10:after {
-  background-image: url("../img/bg/10.jpg");
-}
-.masthead.bg11:after {
-  background-image: url("../img/bg/11.jpg");
-}
-.masthead.bg12:after {
-  background-image: url("../img/bg/12.jpg");
-}
-.masthead.bg13:after {
-  background-image: url("../img/bg/13.jpg");
-}
-.masthead.bg14:after {
-  background-image: url("../img/bg/14.jpg");
-}
-.masthead.bg15:after {
-  background-image: url("../img/bg/15.jpg");
-}
-.masthead.bg16:after {
-  background-image: url("../img/bg/16.jpg");
-}
-.masthead.bg17:after {
-  background-image: url("../img/bg/bg1.jpeg");
-}
-.masthead.bg18:after {
-  background-image: url("../img/bg/bg2.jpeg");
-}
-.masthead.bg19:after {
-  background-image: url("../img/bg/bg3.jpeg");
-}
-.masthead.bg20:after {
-  background-image: url("../img/bg/bg4.jpeg");
+  background-image: url("../img/bg/bg6.jpg");
 }
 
 .masthead,

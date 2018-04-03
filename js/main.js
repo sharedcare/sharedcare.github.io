@@ -106,6 +106,21 @@ function semantic() {
                 title: 'Proposal - Image Captioning',
                 url: '//sharedcare.io/ImageCaptioning/proposal/',
                 description: 'The proposal of Image Captioning',
+            },
+            {
+                title: 'SharedApp',
+                url: '//app.sharedcare.io',
+                description: 'Homepage of SharedApp',
+            },
+            {
+                title: 'Grader | SharedApp',
+                url: '//app.sharedcare.io/grader/',
+                description: 'An efficient excel editor',
+            },
+            {
+                title: 'Blog',
+                url: '//blog.sharedcare.io',
+                description: 'Homepage of blog',
             }
         ];
     $('.ui.sitemap.search')

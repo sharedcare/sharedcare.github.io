@@ -97,6 +97,9 @@
 
     }
 
+    .search > .results {
+      text-align: left;
+    }
 
   </style>
 
@@ -108,6 +111,7 @@
   <script src="./js/main.js"></script>
   <script src="./js/background.js"></script>
   <script src="./js/contact.js"></script>
+  <script src="./js/search.js"></script>
   <!-- Google reCAPTCHA -->
   <script src='https://www.google.com/recaptcha/api.js'></script>
   <!-- Google Analytics -->
@@ -179,10 +183,9 @@
     <a class="item" href="//app.sharedcare.io">App</a>
     <a class="item" href="//blog.sharedcare.io">Blog</a>
     <div class="right menu">
-      <div class="ui category search item">
+      <div class="ui sitemap category search item">
         <div class="ui transparent icon input">
           <input class="prompt" type="text" placeholder="Search...">
-          <i class="github link icon" onclick="window.open('https://github.com/sharedcare');"></i>
         </div>
         <div class="results"></div>
       </div>
@@ -195,10 +198,9 @@
 
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu left">
-  <div class="ui category search item">
+  <div class="ui sitemap category search item">
     <div class="ui inverted transparent icon input">
       <input class="prompt" type="text" placeholder="Search...">
-      <i class="github link icon" onclick="window.open('https://github.com/sharedcare');"></i>
     </div>
     <div class="results"></div>
   </div>
@@ -223,10 +225,9 @@
         <a class="item" href="//sharedcare.io/profile">Profile</a>
         <a class="item" href="//sharedcare.io/gallery">Gallery</a>
         <!-- <a class="disabled item">Blog</a> -->
-        <div class="ui category search item" style="height: 45px;">
+        <div class="ui sitemap category search item" style="height: 45px;">
           <div class="ui inverted transparent icon input">
             <input class="prompt" type="text" placeholder="Search...">
-            <i class="github link icon" onclick="window.open('https://github.com/sharedcare');"></i>
           </div>
           <div class="results"></div>
         </div>

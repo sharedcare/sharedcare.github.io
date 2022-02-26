@@ -1,0 +1,10 @@
+.toc {
+  position: fixed;
+  z-index: 1;
+  width: 300px;
+  background: #1b1c1d;
+}
+
+.article {
+  margin-left: 300px;
+}
